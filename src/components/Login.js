@@ -23,9 +23,9 @@ class Login extends Component {
                     <form onSubmit={this.handleFormSubmit}>
                         <input
                             className="form-item"
-                            placeholder="Username goes here..."
-                            name="username"
-                            type="text"
+                            placeholder="Username/email goes here..."
+                            name="email"
+                            type="email"
                             onChange={this.handleChange}
                         />
                         <input
@@ -55,7 +55,7 @@ class Login extends Component {
     }
     handleFormSubmit(e){
         e.preventDefault();
-        this.Auth.login(this.state.username, this.state.password)
+        this.Auth.login(this.state.email, this.state.password)
             .then(res => {
                 this.props.history.replace('/');
             })
