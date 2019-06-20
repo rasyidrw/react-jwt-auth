@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import {Col} from 'reactstrap';
 import './Login.css';
 import AuthService from './AuthService';
+import loginImage from "../imageAssets/login-image.svg";
 
 class Login extends Component {
     constructor(){
@@ -17,30 +19,44 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="center">
+            <div className="container">
+                <div className="parent-page">
                 <div className="card">
-                    <h1>Login</h1>
+                    <Col>
+                    <h1>LOGIN</h1>
+                    </Col>
+                    <Col>
                     <form onSubmit={this.handleFormSubmit}>
+                        <label>Email</label>
                         <input
                             className="form-item"
-                            placeholder="Username/email goes here..."
+                            placeholder="admin@gmail.com"
                             name="email"
                             type="email"
                             onChange={this.handleChange}
                         />
+                        <label>Password</label>
                         <input
                             className="form-item"
-                            placeholder="Password goes here..."
+                            placeholder="***************"
                             name="password"
                             type="password"
                             onChange={this.handleChange}
                         />
                         <input
                             className="form-submit"
-                            value="SUBMIT"
+                            value="LOGIN"
                             type="submit"
                         />
                     </form>
+                    </Col>
+                </div>
+                <h1 className="horecamind-logo">horeca<span>mind</span></h1>
+                <h2 className="cms-control">CONTROL MANAGEMENT SYSTEM</h2>
+                <div>
+                    <img className="form-bg" src={loginImage} />
+                
+                </div>
                 </div>
             </div>
         );
